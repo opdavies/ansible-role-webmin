@@ -2,4 +2,4 @@
 webmin_version: '1.750'
 webmin_path: '/etc/webmin'
 webmin_port: '10000'
-webmin_port: Webmin Server
+webmin_realm: Webmin Server
