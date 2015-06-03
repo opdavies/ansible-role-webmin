@@ -5,3 +5,7 @@
     state=installed
   sudo: yes
   when: ansible_os_family == 'RedHat'
+
+- name: Install webmin (CentOS).
+  yum: name=webmin state=installed
+  when: ansible_os_family == 'RedHat'
