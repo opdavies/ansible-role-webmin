@@ -9,4 +9,7 @@
   notify: restart webmin
 
 - name: Start the webmin service.
-  service: name=webmin state=started enabled=yes
+  service:
+    name: webmin
+    state: started
+    enabled: yes
