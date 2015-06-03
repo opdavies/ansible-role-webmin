@@ -1,15 +1,12 @@
 ---
-- name: Install the RPM (CentOS).
-  yum: >
-    name="http://prdownloads.sourceforge.net/webadmin/webmin-{{ webmin_version }}-1.noarch.rpm"
-    state=present
-  sudo: yes
+- include: redhat.yml
   when: ansible_os_family == 'RedHat'
 
-- name: Install webmin (CentOS).
-  yum: name=webmin state=present
-  sudo: yes
-  when: ansible_os_family == 'RedHat'
+- name: Copy miniserv.conf.
+  copy: >
+    src: miniserv.conf.js
+    dest: {{ webmin_path }}/miniserv.conf
+  notify: Restart webmin
 
 - name: Start the webmin service.
   service: name=webmin state=started enabled=yes
