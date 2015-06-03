@@ -1,0 +1,13 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: opdavies
+  platforms:
+    - name: EL
+      versions:
+        - 6
+  categories:
+    - web
+    - development
+
