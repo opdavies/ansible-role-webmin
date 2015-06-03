@@ -6,7 +6,7 @@
   copy: >
     src: miniserv.conf.js
     dest: {{ webmin_path }}/miniserv.conf
-  notify: Restart webmin
+  notify: restart webmin
 
 - name: Start the webmin service.
   service: name=webmin state=started enabled=yes
