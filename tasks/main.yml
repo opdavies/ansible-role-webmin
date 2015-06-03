@@ -1,7 +1,7 @@
 ---
 - name: Install the RPM (CentOS).
   yum: >
-    name="http://www.webmin.com/download/rpm/webmin-current.rpm"
+    name="http://prdownloads.sourceforge.net/webadmin/webmin-{{ webmin_version }}-1.noarch.rpm"
     state=present
   sudo: yes
   when: ansible_os_family == 'RedHat'
