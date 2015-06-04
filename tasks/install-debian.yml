@@ -1,5 +1,5 @@
 ---
-- name: add apt repositories
+- name: Add apt repositories.
   apt_repository:
     repo: "deb {{ item }}"
     state: present
@@ -7,9 +7,9 @@
     - 'http://download.webmin.com/download/repository sarge contrib'
     - 'http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib'
 
-- name: install webmin
+- name: Install webmin.
   sudo: yes
   apt:
-    name: webmin
+    name: "webmin={{ webmin_version }}"
     state: present
     force: yes
