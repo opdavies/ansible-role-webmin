@@ -1,8 +1,8 @@
 ---
-- include: install-redhat.yml
+- include: install-RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-- include: install-debian.yml
+- include: install-Debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Copy miniserv.conf
