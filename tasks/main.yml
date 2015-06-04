@@ -5,6 +5,12 @@
 - include: debian.yml
   when: ansible_os_family == 'Debian'
 
+- name: Copy miniserv.conf
+  template:
+    src: "{{ ansible_os_family }}-miniserv.conf.j2"
+    dest: "{{ webmin_path }}/miniserv.conf"
+  notify: restart webmin
+
 - name: Start the webmin service.
   service:
     name: webmin
