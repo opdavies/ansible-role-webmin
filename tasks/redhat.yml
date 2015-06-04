@@ -10,3 +10,9 @@
     name: webmin
     state: present
   sudo: yes
+
+- name: Copy miniserv.conf (CentOS).
+  template:
+    src: miniserv.conf.j2
+    dest: "{{ webmin_path }}/miniserv.conf"
+  notify: restart webmin

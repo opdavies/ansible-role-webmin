@@ -2,12 +2,6 @@
 - include: redhat.yml
   when: ansible_os_family == 'RedHat'
 
-- name: Copy miniserv.conf.
-  template:
-    src: miniserv.conf.j2
-    dest: "{{ webmin_path }}/miniserv.conf"
-  notify: restart webmin
-
 - name: Start the webmin service.
   service:
     name: webmin
