@@ -6,3 +6,10 @@
   with_items:
     - 'http://download.webmin.com/download/repository sarge contrib'
     - 'http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib'
+
+- name: install webmin
+  sudo: yes
+  apt:
+    name: webmin
+    state: present
+    force: yes
